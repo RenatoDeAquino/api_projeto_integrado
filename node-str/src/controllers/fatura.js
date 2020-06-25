@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('card-info');
+
 module.exports = {
 
     async add_project(req, res) {
@@ -41,7 +42,20 @@ module.exports = {
         .catch(function(err){
             return res.sendStatus(400)
         })
+    },
+    
+    async add_votes(req, res) {
+        await User.findOneAndUpdate({name: req.params.name},  
+            { $push: { votos: req.body.votos } } , { new: true})  //Atualiza o array
+        .then(function(){
+            return res.sendStatus(200)
+        })
+        .catch(function(err){
+            console.log(err);
+            return res.sendStatus(400);
+        })
     }
+
 
 
 

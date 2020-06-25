@@ -12,6 +12,9 @@ exports.post = (req, res, next) => {
     info.trello = req.body.trello
     info.video = req.body.video
     info.votes = req.body.votes
+    info.id = req.body.id
+    info.email = req.body.email
+    info.votos = req.body.votos
     info.save().then(x=>{
         res.status(201).send({message: 'pessoa cadastrada com sucesso'})
     }).catch(e =>{
@@ -32,6 +35,3 @@ exports.getPeriodo = (req,res,next) => {
     })
 }
 
-exports.get = (req,res,next) => {
-    repo
-}

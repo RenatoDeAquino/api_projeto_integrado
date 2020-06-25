@@ -3,6 +3,7 @@ var cors = require('cors')
 const router = express.Router()
 const controller = require ('../controllers/card_controller')
 const fatura = require('../controllers/fatura')
+const vote = require('../controllers/votes_controllers')
 
 router.post('/', cors(), controller.post)
 
@@ -15,7 +16,7 @@ router.get("/Periodos/:id",cors(),controller.getPeriodo)
 router.get("/fullPeriodo/:name",cors(),fatura.full_periodo)
 router.get("/fullfull",cors(),fatura.full_full)
 
-
+router.post("/add_vote",cors(),vote.post);
 
 
 module.exports = router

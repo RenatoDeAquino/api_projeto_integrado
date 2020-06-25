@@ -13,6 +13,7 @@ mongoose.connect("mongodb+srv://super:super123@projeto-integrado-xuk7s.mongodb.n
 })
 
 const info = require('./models/card-info')
+const info2 = require('./models/votes')
 const index = require('./routes/index_route')
 const card_info = require('./routes/card_route')
 
